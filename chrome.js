@@ -311,10 +311,12 @@ async function checkPriceUpdates(url, extractedPrice) {
         const userPriceNum = Number(userPrice);
         const prevPriceNum = Number(price);
 
-        if (isNaN(extractedPriceNum) || extractedPriceNum === prevPriceNum) {
-          message = `The price of ${title} remains $${prevPriceNum}. No change detected.`;
-          heading = "Price still remains the same";
-        } else if (extractedPriceNum < prevPriceNum) {
+        // if (isNaN(extractedPriceNum) || extractedPriceNum === prevPriceNum) {
+        //   message = `The price of ${title} remains $${prevPriceNum}. No change detected.`;
+        //   heading = "Price still remains the same";
+        // }
+
+        if (extractedPriceNum < prevPriceNum) {
           message = `The price of ${title} dropped from $${prevPriceNum} to $${extractedPriceNum}.`;
           heading = "Price Drop Alert!";
         } else if (!isNaN(userPriceNum) && extractedPriceNum <= userPriceNum) {

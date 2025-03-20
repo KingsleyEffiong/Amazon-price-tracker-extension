@@ -13,9 +13,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import firebaseConfig from "./config.js";
 import { SCRAPER_API_KEY } from "./config.js";
-import { GMAIL_TEMEPLET_ID } from "./config.js";
-import { GMAIL_SERVICE_ID } from "./config.js";
-import { GMAIL_USER_ID } from "./config.js";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -40,9 +37,9 @@ async function priceTrackingNotification(email, productName, productUrl) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        service_id: GMAIL_SERVICE_ID,
-        template_id: GMAIL_TEMEPLET_ID,
-        user_id: GMAIL_USER_ID,
+        service_id: "service_s1fgl4i",
+        template_id: "template_ibnckge",
+        user_id: "MPbzaC_kPW3F7JZ0r",
         template_params: {
           to_email: email,
           subject: `New Price Tracking: ${productName}`,
@@ -250,9 +247,9 @@ async function sendNewPriceTrackingNotification(
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          service_id: GMAIL_SERVICE_ID,
-          template_id: GMAIL_TEMEPLET_ID,
-          user_id: GMAIL_USER_ID,
+          service_id: "service_s1fgl4i",
+          template_id: "template_ibnckge",
+          user_id: "MPbzaC_kPW3F7JZ0r",
           template_params: {
             to_email: email,
             subject: `New Price Tracking: ${productName}`,
